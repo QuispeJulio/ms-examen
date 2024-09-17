@@ -32,6 +32,7 @@ public class UserController {
 
     @PostMapping("/register")
     public ResponseEntity<Usuario> signUpUser(@RequestBody PersonaRequest personaRequest) {
+        System.out.println("usuario registrado");
         if (personaRequest.getEmail() == null || personaRequest.getEmail().isEmpty()) {
             throw new CustomIllegalArgumentException("El email no puede estar vacío.");
         } else {
